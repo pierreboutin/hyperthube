@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href="/index/css/index.css" rel="stylesheet"/>
+		<title>Hypertube</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			   		<a class="navbar-brand"><span class="glyphicon glyphicon-film"></span></a>
+			    	<a class="navbar-brand" href="/">Hypertube</a>
+			    </div>
+			    <ul class="nav navbar-nav navbar-right">
+			      <li><a>Already a member ? </a></li>
+			        <form class="navbar-form navbar-left" role="form">
+		    			<div class="form-group">
+		    				<input id ="user_id" type="text" class="form-control red-tooltip" placeholder="Pseudo" data-toggle="tooltip" data-placement="bottom">
+		     				<input id ="user_pwd" type="password" class="form-control red-tooltip" placeholder="Password" data-toggle="tooltip" data-placement="bottom">
+		    			</div>
+		  			</form>
+		  			<li id="pwd_forgot" class="hidden red-tooltip" data-toggle="tooltip" data-placement="bottom"><a><span class="glyphicon glyphicon-question-sign"></span></a></li>
+			      	<li><a href="#" id="id_check"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			    </ul>
+			  </div>
+			</nav>
+		</header>
+		<div class="container">
+			<div class="alert alert-danger">
+			  <strong>Error 404:</strong> Page not found.
+			</div>
+		</div>
+		<div id="pwd_forgot_email" class="hidden alert alert-warning form-group" role="alert" style="width:60%;">
+			<p style="margin-bottom: 5px;">Enter your email below, we will sent you a link to reset your password</p><input id="user_email" class="red-tooltip form-control" placeholder="Email" data-toggle="tooltip" data-placement="right" name="user_email">
+			<a id="pwd_forgot_email_confirm" class="btn btn-default" role="button">Send</a>
+		</div>
+		<div id="pwd_forgot_email_success" class="hidden alert alert-success form-group" role="alert" style="width:60%;">
+			<p style="margin-bottom: 5px;">Password recovery email successfully sent</p>
+		</div>
+			<div id="registration_container" class="container">
+				<!-- registration container import -->
+			</div>
+	    <div id="reg_success" class="hidden alert alert-success" role="alert"><p>Your registration has been successfully submitted</p></div>
+		<footer style="text-align: right; cursor: default;">
+			<span style="color: #2C3E50; font-weight: bold;">Hypertube team</span><span style="margin-left: 5px;" class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>
+		</footer>
+	</body>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="/lib/utils.js"></script>
+	<script src="/index/js/index.js"></script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href="/generic/css/header.css" rel="stylesheet"/>
+		<link href="/allProfiles/css/allProfiles.css" rel="stylesheet"/>
+		<title>Hypertube</title>
+	</head>
+	<body>
+	<header>
+		<!-- header is imported from generic dir -->
+	</header>
+	<div id="profiles_container" class="container">
+		<p class="profiles_container_title">Users</p>
+		<div id="hypertube_users_container">
+		</div>
+	</div>
+	<footer style="text-align: right; cursor: default;">
+		<span style="color: #2C3E50; font-weight: bold;">Hypertube team</span><span style="margin-left: 5px;" class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>
+	</footer>
+	</body>
+	<script src=""></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="/lib/utils.js"></script>
+	<script src="/allProfiles/js/allProfiles.js"></script>
+	<script>
+	(function($){
+  $.fn.translate = function(options) {
+
+    var that = this; //a reference to ourselves
+
+    var settings = {
+      css: "trn",
+      lang: "en"/*,
+      t: {
+        "translate": {
+          pt: "tradução",
+          br: "tradução"
+        }
+      }*/
+    };
+    settings = $.extend(settings, options || {});
+    if (settings.css.lastIndexOf(".", 0) !== 0)   //doesn't start with '.'
+      settings.css = "." + settings.css;
+
+    var t = settings.t;
+
+    //public methods
+    this.lang = function(l) {
+      if (l) {
+        settings.lang = l;
+        this.translate(settings);  //translate everything
+      }
+
+      return settings.lang;
+    };
+    this.get = function(index) {
+      var res = index;
+
+      try {
+        res = t[index][settings.lang];
+      }
+      catch (err) {
+        //not found, return index
+        return index;
+      }
+
+      if (res)
+        return res;
+      else
+        return index;
+    };
+    this.g = this.get;
+    //main
+    this.find(settings.css).each(function(i) {
+      var $this = $(this);
+
+      var trn_key = $this.attr("data-trn-key");
+      if (!trn_key) {
+        trn_key = $this.html();
+        $this.attr("data-trn-key", trn_key);   //store key for next time
+      }
+
+      $this.html(that.get(trn_key));
+    });
+		return this;
+  };
+})(jQuery);
+
+	</script>
+</html>

@@ -1,0 +1,22 @@
+.navbar {
+	background-color: #FBF9F3;
+}
+.navbar .navbar-right a {
+	cursor: default;
+}
+.centered-form{
+	margin-top: 60px;
+}
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+}
+.red-tooltip + .tooltip > .tooltip-inner {
+	background-color: #e74c3c;
+}
+.navbar-header .navbar-brand {
+	color: #2C3E50;
+	cursor: pointer;
+}
+.nav .active {
+	cursor: pointer;
+}

@@ -1,0 +1,20 @@
+body {
+	color: #337ab7;
+}
+#profile_title {
+	text-align: center;
+	margin-bottom: 32px;
+}
+.red-tooltip + .tooltip > .tooltip-inner {
+	background-color: #e74c3c;
+}
+#profile_picture_container {
+	margin-bottom: 6px;
+}
+#profile_pic {
+	width: 50%;
+	max-width: 200px;
+	height: 180px;
+	margin: auto;
+	margin-bottom: 12px;
+}

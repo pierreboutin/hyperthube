@@ -1,0 +1,70 @@
+<div class="row centered-form">
+	<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		<div class="panel panel-default">
+			<div class="panel-body" style="text-align: center">
+				<div class="box_oauth">
+					<a href="/auth_github" class="b_oauth trn"><img title="Log in with Github" src="/img/GitHub-Mark-32px.png"></a>
+					<a href="/auth_42" class="b_oauth trn"><img title="Log in with 42" src="/img/42_Logo.png"></a>
+					<a href="/auth_google" class="b_oauth trn"><img title="Log in with Google" src="/img/Google_Logo.png"></a>
+					<a href="/auth_reddit" class="b_oauth trn"><img title="Log in with Reddit" src="/img/Reddit_Logo.png"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row centered-form">
+	<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title trn">Not a member ? You may register !</h3>
+			</div>
+			<div class="panel-body">
+				<form role="form">
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="text" name="first_name" class="form-control input-sm red-tooltip" placeholder="First Name" data-toggle="tooltip" data-placement="top">
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="text" name="last_name" class="form-control input-sm red-tooltip" placeholder="Last Name" data-toggle="tooltip" data-placement="top">
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<input type="email" name="email" class="form-control input-sm red-tooltip" placeholder="Email Address">
+					</div>
+					<div class="form-group">
+						<input type="text" name="pseudo" class="form-control input-sm red-tooltip" placeholder="Pseudo">
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="password" name="password" class="form-control input-sm red-tooltip" placeholder="Password">
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="password" name="password_confirmation" class="form-control input-sm red-tooltip" placeholder="Confirm Password">
+							</div>
+						</div>
+					</div>
+	                <div class="form-group" id ="profile_pic_browse">
+	                    <label for="load_pictures" class="col-sm-3 control-label trn">Load profile picture</label>
+	                        <label class="btn btn-default btn-file"><span class="trn">Browse</span><input type="file" style="display: none;" id="upload_profile_picture_btn" accept="image/png, image/jpeg, image/jpg"/>
+	                        </label>
+	                    <div id="profile_picture_container" class="col-sm-9">
+
+	                    </div>
+	                </div>
+					<input id="member_register" type="submit" value="Register" class="btn btn-info btn-block">
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

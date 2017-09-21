@@ -1,0 +1,84 @@
+
+
+		/*
+		if (Buffer.byteLength(this.bitfield.remainingHave) >= 9) {
+			for (var i = 0; i < haveData.length / 9; i++) {
+				try {
+					if (haveData.readUInt32BE((i * 9)) == 4 &&
+						haveData[(i * 9) + 4] == 5) {
+						var pieceIndex = haveData.readUInt32BE((i * 9) + 5);
+						if (this.availablePieces.indexOf(pieceIndex) == -1)
+							this.availablePieces.push(pieceIndex);
+					}
+				} catch (err) {
+					logger.warn('cannot read have message from bitfield.remainingHave :' + err);
+				}
+			}
+		}
+		*/
+		/*
+		else if (rawBuffer[4] == 5 && rawBuffer.readUInt32BE(0) == 4) {
+			// have func
+			for (var i = 0; i < rawBuffer.length / 9; i++) {
+				try {
+					if (rawBuffer.readUInt32BE((i * 9)) == 4 &&
+						rawBuffer[(i * 9) + 4] == 5) {
+						var pieceIndex = rawBuffer.readUInt32BE((i * 9) + 5);
+						if (this.availablePieces.indexOf(pieceIndex) == -1)
+							this.availablePieces.push(pieceIndex);
+					}
+				} catch (err) {
+					logger.warn('cannot read have message from bitfield.remainingHave :' + err);
+				}
+			}
+			//
+		}
+		*/
+// logger.debug('(' + this.currentPiece.index + ') received data from ' + this.remoteClientHref +
+// 			' : ', rawBuffer, ', length: ' + Buffer.byteLength(rawBuffer) + ' { ' + this.currentPiece.offset +
+// 			'-' + this.pieceLength + '}');
+// 		// logger.debug(rawBuffer.toString('hex'));
+// 		if (this.msgExchange == true) {
+
+// 			this.messages(rawBuffer, this.client);
+// 		}
+// 		else if (this.handshake == false)
+// 			this.receiveHandshake(rawBuffer)
+// 		else if (this.handshake == true) {
+// 			this.bitfieldCheck(rawBuffer);
+// 			if (this.availablePieces.length != this.bt.metadata.pieces.length)
+// 				this.haveMsgCheck(rawBuffer)
+// 			logger.debug('availablePieces: ', this.availablePieces.length);
+
+// 			if (this.availablePieces.length > 0) {
+// 				logger.verbose('send interested message to ' + this.remoteClientHref);
+// 				this.msgExchange = true;
+// 				this.client.write(this.message.INTERESTED);
+// 			}
+// 		}
+	/*
+	Peer.prototype.messages = function(rawBuffer) {
+		if ((rawBuffer[4] == 0x07 && rawBuffer.readUInt32BE(0) >= 9) ||
+			(this.receivingPieceBlock == true) && this.choke == false) {
+			logger.debug('received piece message from ' + this.remoteClientHref);
+			this.receivePiece(rawBuffer);
+		}
+		else {
+			for (var i = 0; i < Object.keys(this.message).length; i++) {
+				if (rawBuffer.slice(0, 5).compare(this.message[Object.keys(this.message)[i]]) == 0) {
+					logger.debug('received ' + Object.keys(this.message)[i] + ' message');
+					var message = Object.keys(this.message)[i].toLowerCase();
+
+					if (message == 'choke' && Buffer.byteLength(rawBuffer) == 5 && this.choke == false)
+						this.choke = true;
+					else if (message == 'unchoke' && (Buffer.byteLength(rawBuffer) == 5)) {
+						this.choke = false;
+						this.requestPiece();
+					}
+					else if (message == 'have' && this.choke == false)
+						this.have(rawBuffer);
+				}
+			}
+		}
+	},
+	*/

@@ -1,0 +1,44 @@
+			// if (pieceMsgIndex > 12) {
+				// logger.debug('DATA BEFORE ' + pieceMsgIndex, Buffer.byteLength(msgBuffer.slice(0, pieceMsgIndex)));
+				// piece.dataBlock = Buffer.concat([piece.dataBlock, msgBuffer.slice(0, pieceMsgIndex)]);
+			// }
+			// logger.debug('DATA BEFORE!!!!!! ' + pieceDataLen);
+
+
+		// else {
+		// 	var pieceDataLen = Buffer.byteLength(msgBuffer);
+
+		// 	this.currentPiece.data = Buffer.concat([this.currentPiece.data, msgBuffer]);
+		// 	this.currentPiece.blockCurrentLen += pieceDataLen;
+		// 	this.currentPiece.offset += pieceDataLen;
+		// 	this.bytesPerSecond += pieceDataLen;
+		// }
+
+		// if (this.currentPiece.blockCurrentLen == this.currentPiece.blockTotalLen) {
+			// logger.debug('ALRIGHT');
+			// this.receivingPieceBlock = false;
+			// if (this.currentPiece.blockLen != this.BLOCK_PIECE_LEN)
+				// this.currentPiece.blockLen = this.BLOCK_PIECE_LEN;
+		// }
+		// this.currentPiece.blockCurrentLen = 0;
+		// this.currentPiece.blockTotalLen = 0;
+
+				// logger.info(' blockQueue: ' + this.remoteClientHref);
+		// console.log(this.currentPiece.blockQueue);
+		// logger.info('BlockTotalLen: ' + this.currentPiece.blockTotalLen);
+
+		// logger.debug(requestPiecesBuf.toString('hex'));
+		// logger.debug(this.currentPiece.blockCurrentLen + '--' + this.currentPiece.blockTotalLen);
+		// console.log(this.currentPiece.blockQueue);
+
+				// if (this.currentPiece.blockQueue.length > 0)
+		// var pieceMsgIndex = msgBuffer.indexOf(this.currentPiece.blockQueue[0]);
+		// logger.info('pieceMsgIndex: ' + pieceMsgIndex + 'from: ' + this.remoteClientHref);
+		// console.log(msgBuffer, 'indexOf', this.currentPiece.blockQueue[0],
+			// this.currentPiece.blockQueue);\
+			/*typeof pieceMsgIndex !== 'undefined' && pieceMsgIndex >= 0*/
+			// console.log(this.currentPiece.blockQueue[0])
+						// this.currentPiece.blockCurrentLen += pieceDataLen;
+								// blockTotalLen: 0,
+		// blockCurrentLen: 0,
+		// blockLen: this.BLOCK_PIECE_LEN,

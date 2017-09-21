@@ -1,0 +1,64 @@
+Bittorrent.prototype.filesInfo = function(filesPath, options, cb) {
+	// delete options
+	if (typeof options !== 'undefined' && typeof options !== 'object')
+		logger.warn('options must be an object');
+
+	if (typeof filesPath === 'undefined' || filesPath == null) {
+		if (this.files.length > 0) {
+			this.files.forEach((file) => {
+				if (file.started == true) {
+					var fileInfo = {};
+					for (var i = 0; i < file.pieces.length; i++) {
+						if (!file.pieces[i].dl) {
+							fileInfo.firstPieceMissing = file.pieces[i].index;
+							break;
+						}
+					}
+					if (file.currentLen == file.length)
+						fileInfo.percent = 100;
+					else {
+						var percent = Math.round((file.currentLen * 100 / parseInt(file.length)) * 10) / 10;
+
+						fileInfo.percent = percent;
+						fileInfo.currentLen = file.currentLen;
+						fileInfo.finalLen = file.length;
+						if (typeof options !== 'undefined' && options.verbose == true)
+							logger.info('[' + file.name + '] : ' + percent);
+					}
+					fileInfo.dlPath = file.dlPath;
+					cb(fileInfo); // ^ put in else if no need to put info when finished
+				}
+			});
+		}
+	}
+	else {
+		if (filesPath.length == 0)
+			logger.warn('filesInfo: incorrect filesPath parameter, need at least one path');
+		else {
+			if (this.files.length > 0) {
+				this.files.forEach((file) => {
+					if (file.started == true) {
+						filesPath.forEach((filePath) => {
+							if (filePath == file.path) {
+								var fileInfo = {};
+								if (file.currentLen == file.length)
+									fileInfo.percent = 100;
+								else {
+									var percent = Math.round((file.currentLen * 100 / parseInt(file.length)) * 10) / 10;
+
+									fileInfo.percent = percent;
+									fileInfo.currentLen = file.currentLen;
+									fileInfo.finalLen = file.length;
+									if (typeof options !== 'undefined' && options.verbose == true)
+										logger.info('[' + file.name + '] : ' + percent);
+								}
+								fileInfo.dlPath = file.dlPath;
+								cb(fileInfo); // ^ put in else if no need to put info when finished
+							}
+						});
+					}
+				});
+			}
+		}
+	}
+}

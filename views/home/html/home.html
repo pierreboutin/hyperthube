@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" rel="stylesheet"/>
+  <link href="/generic/css/header.css" rel="stylesheet"/>
+  <link href="/home/css/home.css" rel="stylesheet"/>
+  <title>Hypertube</title>
+</head>
+<body>
+  <header>
+    <!-- header is imported from generic dir -->
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="input-group" id="adv-search">
+          <input type="text" id="title" class="form-control" placeholder="Search for snippets" />
+          <div class="input-group-btn">
+            <div class="btn-group" role="group">
+              <div class="dropdown dropdown-lg">
+                <button type="button" id="okay" class="btn btn-default dropdown-toggle" aria-expanded="false"><span class="caret"></span></button>
+                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                  <form class="form-horizontal" >
+
+                    <div class="form-group">
+                      <label for="contain" class="trn">Subject Filter</label>
+                      <input class="form-control" id="subject" type="text" />
+                    </div>
+                    <div class="form-group">
+                      <label for="contain" class="col-md-6 trn">Production date filter</label>
+                      <input type="text" id="from" class="filter_product_date col-md-3" placeholder="From" "form-control" data-date-format="yyyy" name="from" />
+                      <input type="text" id="to" class="col-md-3 filter_product_date" placeholder="To" "form-control" data-date-format="yyyy" name="to" />
+                    </div>
+                    <div class="form-group">
+                      <label for="filter" class="col-md-6 trn">Imdb note filter</label>
+                      <input type="text" class="col-md-3 filter_imdb_bote" id="note1" placeholder="/10" "form-control" data-date-format="yyyy" name="from" />
+                      <input type="text" class="col-md-3 filter_imdb_bote" id="note2" placeholder="/10" "form-control" data-date-format="yyyy" name="to" />
+                    </div>
+
+                    <div class="form-group ">
+                      <div class="radio col-md-6">
+                        <label><input type="radio" id="archive" name="optradio" checked >archive</label>
+                      </div>
+                      <div class="radio col-md-6">
+                        <label><input type="radio" name="optradio">legittorrents</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="sort" class="trn">sort by</label>
+                      <label for="filter" class="trn"></label>
+                      <select id="sort" class="form-control">
+                        <option value="0" selected class="trn">title</option>
+                        <option value="1" class="trn">subject</option>
+                        <option value="2" >date</option>
+                        <option value="3" >Imdb note</option>
+                      </select>
+                    </div>
+                  </form>
+                  <!-- <button  onclick="search2();" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button> -->
+                </div>
+              </div>
+              <button type="button" onclick="search()" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="movies" class="row center-block">
+
+</div>
+</body>
+<footer style="text-align: right; cursor: default;">
+  <span style="color: #2C3E50; font-weight: bold;">Hypertube team</span><span style="margin-left: 5px;" class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>
+</footer>
+</html>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+<script src="/home/js/home.js"></script>
+<script src="/myProfile/js/myProfile.js"></script>

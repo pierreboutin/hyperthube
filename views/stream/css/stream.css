@@ -1,0 +1,274 @@
+/*.jolie{
+  padding : 1em;
+  width: 75%;
+  height: 200px;
+  box-sizing: border-box;
+
+
+  background-color: #E4E4D9;
+
+
+  background-image: linear-gradient(175deg, rgba(0,0,0,0) 95%, #8da389 95%),
+  linear-gradient( 85deg, rgba(0,0,0,0) 95%, #8da389 95%),
+  linear-gradient(175deg, rgba(0,0,0,0) 90%, #b4b07f 90%),
+  linear-gradient( 85deg, rgba(0,0,0,0) 92%, #b4b07f 92%),
+  linear-gradient(175deg, rgba(0,0,0,0) 85%, #c5a68e 85%),
+  linear-gradient( 85deg, rgba(0,0,0,0) 89%, #c5a68e 89%),
+  linear-gradient(175deg, rgba(0,0,0,0) 80%, #ba9499 80%),
+  linear-gradient( 85deg, rgba(0,0,0,0) 86%, #ba9499 86%),
+  linear-gradient(175deg, rgba(0,0,0,0) 75%, #9f8fa4 75%),
+  linear-gradient( 85deg, rgba(0,0,0,0) 83%, #9f8fa4 83%),
+  linear-gradient(175deg, rgba(0,0,0,0) 70%, #74a6ae 70%),
+  linear-gradient( 85deg, rgba(0,0,0,0) 80%, #74a6ae 80%);  border-radius: 10px 10px 10px 10px;
+}
+
+.spin {
+  animation:spin-constant 5s;
+  -webkit-animation-name: spin-constant;
+  -webkit-animation-duration: 1200ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin-constant;
+  -moz-animation-duration: 1200ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  animation-name: spin-constant;
+  animation-duration: 1200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.blink {
+  -webkit-animation-name: toggle;
+  -webkit-animation-duration: 0.1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: toggle;
+  -moz-animation-duration: 0.1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  animation-name: toggle;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes toggle {
+from {
+visibility:hidden;
+}
+10% {
+visibility: visible;
+background-color: #9AFE2E;
+}
+80% {
+visibility:hidden;
+}
+to {
+visibility:visible;
+background-color: red;
+}
+}
+@-webkit-keyframes toggle {
+from {
+visibility:hidden;
+}
+10% {
+visibility:hidden;
+}
+to {
+visibility:visible;
+}
+}
+
+@-moz-keyframes spin-constant {
+from {
+-moz-transform: rotate(0deg);
+}
+50%
+{
+transform:rotate(180deg);
+}
+to {
+-moz-transform: rotate(0deg);
+}
+}
+@-webkit-keyframes spin-constant {
+from {
+-webkit-transform: rotate(0deg);
+}
+50%
+{
+transform:rotate(180deg);
+}
+to {
+-webkit-transform: rotate(0deg);
+}
+}
+@keyframes spin-constant {
+  from {
+    transform:rotate(0deg);
+  }
+  50%
+  {
+    transform:rotate(180deg);
+  }
+  to {
+    transform:rotate(0deg);
+  }
+}
+
+.anim{
+  width:50px;
+  height:50px;
+  margin:20px;
+  background-color:red;
+  animation:spin 5s ;
+  -webkit-animation: spin 1s linear;
+  -webkit-animation-iteration-count:1;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+  }
+}
+
+.bounce {
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  from {transform: translateX(-100%););}
+  50% {transform: translate(200%, 100%);}
+  to {transform: translateX(-100%);}
+}
+
+#listFiles ul {
+    padding: 0;
+    margin: 0;
+}
+#listFiles ul li {
+    display: inline-block;
+    border: 0 solid rgb(82, 177, 224);
+    border-left-width: 1px;
+    padding: 0 3px;
+    margin: 2px;
+    transition: background-color 0.75s ease-in-out;
+    width: 100%;
+}
+#listFiles ul li:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+#listFiles ul li a:hover, #listFiles ul li a:visited, #listFiles ul li a:focus {
+    text-decoration: none;
+}
+#listFiles ul li button {
+    margin: 2px;
+}
+*/
+.pb-cmnt-container {
+    font-family: Lato;
+    margin-top: 10px;
+}
+.panel-color {
+  border: 1px solid #3f7dc6;
+}
+
+#panel-body {
+    padding: 15px;
+    padding-bottom: 0px;
+}
+
+.panel-body2 {
+  padding: 2px 15px 15px 15px;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 5px;
+    height: 130px;
+    width: 100%;
+    border: 1px solid #3f7dc6;
+}
+hr {
+  margin-top: 0px;
+  border: 1px solid #3f7dc6;
+  width: 80%;
+  align: center;
+}
+
+#video {
+    margin: center;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
+#url {
+  margin-bottom: 10px;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3%;
+}
+#url > .form-control {
+  height: 20%;
+  margin-right: 5%;
+}
+
+#blink {
+  width: 95%;
+  margin: auto;
+}
+
+#url > [type=submit] {
+  height: 10%;
+}
+
+.table {
+  color: #2c3e73;
+  border-radius: 3px;
+}
+
+.form-inline {
+  width: 100%;
+  display: inline-block;
+}
+
+.table-bordered td, .table-bordered th{
+  border-color: #3f7dc6 !important;
+  border-radius: 10px;
+}
+
+/* for button */
+.btn-loading {
+    margin: 2.5px;
+    padding: 0;
+    text-align: left;
+}
+.btn-loading span.btn-loading-load {
+    display: inline-block;
+    background-color: hsla(200, 80%, 50%, 0.75);
+    border-radius: inherit;
+}
+.btn-loading span.btn-loading-text {
+    display: inline-block;
+    padding: 6px 12px;
+}
+.video-js .vjs-big-play-button {
+    visibility: hidden;
+    top: 45%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+}

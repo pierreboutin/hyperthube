@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/api/css/reset.css">
+	<!--	<link href="http://vjs.zencdn.net/5.19.1/video-js.css" rel="stylesheet">-->
+        <link rel="stylesheet" href="/api/css/style.css">
+		<title>Api | Hypertube</title>
+	</head>
+	<body>
+        <header>
+            <!-- header is imported from generic dir -->
+			<h1 class="navbar"><a href="/api/">Api</a> | <a href="/">Hypertube</a></h1>
+        </header>
+		<!--
+		<style>/*
+			.video-dimensions {
+				width: 100%;
+				height: auto;
+			}*/
+		</style>
+		<video id="video" class="vjs-fluid video-js" controls preload="metadata" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+			<p class="vjs-no-js">
+				To view this video please enable JavaScript, and consider upgrading to a web browser that
+				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+			</p>
+		</video>
+		<script src="http://vjs.zencdn.net/5.19.1/video.js"></script>
+
+		<!--<video id="video" controls="" name="media">
+		<source src="MY_VIDEO.mp4" type='video/mp4'>
+		<source src="MY_VIDEO.webm" type='video/webm'>
+			<track label="English" kind="subtitles" srclang="en" src="captions/vtt/sintel-en.vtt">
+		</video>
+		<video id="video" class="vjs-fluid video-js" controls preload="metadata" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+			<p class="vjs-no-js">
+				To view this video please enable JavaScript, and consider upgrading to a web browser that
+				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+			</p>
+			<video id="video" style="width:100%" controls="">
+		</video>
+		-->
+		<div class="none txtcenter">
+			<div class="block txtleft">
+				<h2>Get your token :</h2>
+				<p class="spacing">Create your dev account with your username, email, and your password.<br>
+				Now go on <span style="background-color: #eee;cursor: pointer;" onclick="select(this)">/api/authenticate</span> and POST your username, your email and your password to get your token. Your token expires in 24h.<br>
+				You need to pass your token when you need to access to a <span class="color_user">user</span> or <span class="color_admin">admin</span> request.</p>
+			</div>
+			<div class="form_user block">
+				<p>Create dev account :</p>
+				<form id="new_user" action="/api/account" method="post">
+					<input type="text" name="username" placeholder="username">
+					<br>
+					<input type="mail" name="email" placeholder="email">
+					<br>
+					<input type="password" name="password" placeholder="password">
+					<br>
+					<input type="submit">
+				</form>
+			</div>
+		</div>
+        <ul id="routes"></ul>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+		/*
+		$.ajax({
+			method: "GET",
+			url: "/stream/0",
+			headers: {
+			//	range: "0-"+(1024*1024*20)
+			}
+		})
+		.done(function( msg ) {
+			var l = msg.length;
+			var array = new Uint8Array(l);
+			for (var i = 0; i < l; i++) {
+				if (i < 100)
+				//console.log(msg.charCodeAt(i).toString(16), msg.charCodeAt(i), i, msg[i]);
+				array[i] = msg.charCodeAt(i);
+			}
+			//console.log(i, array.length);
+			var blob = new Blob([array], {type: 'application/octet-stream'});
+			//console.log(URL.createObjectURL(blob));
+/*
+
+		//	$('input').change(function(){
+				var frb = new FileReader();
+				//frb.onload = function(){
+					var i, l, d, array;
+					d = msg;
+					l = d.length;
+					//console.log('=>',l);
+					array = new Uint8Array(l);
+					for (var i = 0; i < l; i++){
+						array[i] = d.charCodeAt(i);
+					}
+					var b = new Blob([array], {type: 'application/octet-stream'});
+				//	window.location.href = URL.createObjectURL(b);
+				//};
+			//	frb.readAsBinaryString(this.files[0]);
+//*/
+
+			//});
+			////console.log(msg);
+//		});
+		//var player = videojs('video');
+		var player = document.getElementById('video');
+		function loaddd(data) {
+			/*player.src('/stream/0?'+new Date().getTime());
+			player.on('ended', function () {
+				//console.log('ended');
+				player.cache_ = {};
+				player = videojs('video');
+				loaddd(data);
+			});*/
+			player.src = ('/stream/0?'+new Date().getTime());
+			player.onended = () => {
+				//console.log('ended');
+				//player.cache_ = {};
+				//player = videojs('video');
+				loaddd(data);
+			};
+			/*
+			*/
+			/*player.on('loadeddata', function (a,b,c) {
+				setTimeout(()=> {
+					if (parseInt(data.duration) != parseInt(player.duration())) {
+						//console.log('data',parseInt(data.duration), parseInt(player.duration()));
+						player.src('/stream/0?'+new Date().getTime());
+					}
+				},500)
+			});
+			//console.log(data);
+			/*player.duration = function() {
+				return 100;
+			}*/
+			// the amount of seconds of video
+			var i = 0;
+			var load = setInterval(()=>{
+				//console.log(parseInt(data.duration), parseInt(player.duration));
+				//, player.buffered(), player.bufferedEnd(), player.bufferedPercent()
+				//if (parseInt(data.duration) == parseInt(player.duration())) {
+				if (parseInt(player.duration) > 0) {
+					/*player.ready(function() {
+						clearInterval(load);
+						player.play();
+					});*/
+					player.oncanplay = () => {
+						//console.log('play');
+						clearInterval(load);
+						player.play();
+					};
+				}
+				else if (i == 19) {
+					i = 0;
+					player.src=('/stream/0?'+new Date().getTime());
+				}
+				else {
+					i++;
+				}
+			}, 250);
+		}
+		$.getJSON('/stream/metadata/0', loaddd);
+		//*/
+
+		//var src = $("<source>");//$([0]).attr('src');
+		////console.log(src);
+		//src.attr('src', '/stream/1?'+new Date().getTime());
+		//src.attr('type', 'video/mp4');
+		//$("#video").append(src);
+
+			$('#new_user').submit(function(e) {
+				e.preventDefault();
+				$.ajax({
+					type: $(this).attr('method'),
+					url: $(this).attr('action'),
+					data: $(this).serialize(),
+					dataType: 'json',
+					success: (data)=>{
+						if (data.success) {
+							toast.show(data.message, 'backgreen', 3);
+						}
+						else {
+							toast.show(data.message, 'backred', 3);
+						}
+					}
+				});
+			});
+            $.getJSON('/api/doc', function(data) {
+                var routes = $('#routes');
+                for (let i = 0; i < data.length; i++) {
+                    let li = $('<li></li>');
+                    li.append('<h3 class="'+(data[i].access != 'user' ? data[i].access : '')+'">'+data[i].method+' '+data[i].access+' <span class="select">'+data[i].url+'</span></h3>');
+					li.find('h3 .select').click((e)=>{
+					//	e.stopPropagation();
+						select(li.find('h3 .select')[0]);
+					});
+					li.find('h3').click(()=>{
+						li.find('.info').slideToggle();
+						li.find('.parameter').slideToggle();
+						li.find('.return').slideToggle();
+						select(li.find('h3 .select')[0]);
+					});
+					li.append('<p class="info">'+data[i].info+'</p>');
+                    if (data[i].parameter && Object.keys(data[i].parameter).length > 0) {
+                        li.append('<div class="parameter"><p class="bold">Parameter :</p><ul></ul></div>');
+                        var ul = li.find('.parameter ul');
+                        var params = Object.keys(data[i].parameter);
+                        for (var j = 0; j < params.length; j++) {
+                            var li2 = $('<li><span class="name">'+params[j]+' :</span> '+data[i].parameter[params[j]]+'</li>');
+                            ul.append(li2);
+                        }
+                    }
+                    if (data[i].return && Object.keys(data[i].return).length > 0) {
+                        li.append('<div class="return"><p class="bold">Return :</p><ul></ul></div>');
+                        ul = li.find('.return ul');
+                        var returns = Object.keys(data[i].return);
+                        for (var j = 0; j < returns.length; j++) {
+                            var li2 = $('<li><span class="name">'+returns[j]+' :</span> '+data[i].return[returns[j]]+'</li>');
+                            ul.append(li2);
+                        }
+                    }
+                    li.hide();
+                    setTimeout(()=>{
+						li.find('.info').slideUp();
+						li.find('.parameter').slideUp();
+						li.find('.return').slideUp();
+                        li.slideDown('fast');
+                    }, i*125);
+                    routes.append(li);
+                }
+            })
+            function select(elem) {
+                var range = document.createRange();
+                range.selectNodeContents(elem);
+                var sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+            };
+			var toast = {};
+			toast.show = function(msg, color, sec) {
+				var div = $('<div class="toast '+color+'"></div>');
+				div.html('<p>'+msg+'</p>').hide();
+				$('body').append(div);
+				div.fadeIn('slow');
+				setTimeout(()=>{
+					div.fadeOut('slow', ()=>{
+						div.remove();
+					})
+				}, sec*1000);
+			}
+        </script>
+	</body>
+</html>

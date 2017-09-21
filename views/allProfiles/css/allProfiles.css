@@ -1,0 +1,18 @@
+#profiles_container {
+	text-align: center;
+	width: 80%;
+	background-color: #F2F1EF;	
+	border-radius: 5px;
+	margin-bottom: 30px;
+    max-height: 2200px;
+    overflow-y: auto;
+}
+.profiles_container_title {
+	text-align:center;
+	color:#587ab7;
+	font-weight:bold;
+}
+#hypertube_users_container {
+	text-align: center;
+	margin-bottom: 5px;
+}

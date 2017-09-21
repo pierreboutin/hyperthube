@@ -1,0 +1,97 @@
+.navbar {
+	background-color: #FBF9F3;
+}
+.navbar .navbar-right a {
+	cursor: default;
+}
+.centered-form {
+	margin-top: 60px;
+}
+.centered-form .panel {
+	background: rgba(255, 255, 255, 0.8);
+}
+.red-tooltip + .tooltip > .tooltip-inner {
+	background-color: #e74c3c;
+}
+.navbar-header .navbar-brand {
+	color: #2C3E50;
+	cursor: pointer;
+}
+.glyphicon-log-in {
+	margin-right: 5px;
+}
+
+#reg_success {
+	margin: auto;
+	margin-top: 20px;
+	width: 53%;
+	text-align: center;
+}
+#pwd_forgot a {
+	cursor:pointer;
+	color: #e74c3c;
+	font-size:16px;
+}
+#pwd_forgot_email, #pwd_forgot_email_success, #new_pwd_container, #pwd_change_success {
+	margin: auto;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 60%;
+}
+#user_email {
+    width: 60%;
+    height: 30px;
+    margin: auto;
+}
+#pwd_forgot_email_confirm, #new_pwd_confirm {
+	margin-top: 10px;
+	color: #337ab7;
+}
+
+.box_oauth {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.b_oauth {
+	display: inline-block;
+	margin: 1px;
+	padding: 10px;
+}
+
+.b_oauth:hover {
+    background-color: #5bc0de;
+		border: 1px solid #ddd;
+		margin: 0px;
+}
+
+.b_oauth > img {
+	height: 40px;
+	width: 40px;
+}
+
+#profile_pic_browse {
+	text-align: center;
+}
+#profile_pic_browse > .control-label {
+	width: 44%;
+	color: #9c9999;
+	margin-left: 8%;
+	padding-right: 0px;
+}
+#profile_pic_browse > .btn {
+	width: 25%;
+	color: #9c9999;
+	margin-right: 22%;
+}
+#profile_picture_container {
+	width: 100%;
+	margin-top: 2%;
+}
+#profile_pic {
+	width: 50%;
+	max-width: 200px;
+	height: 180px;
+	margin: auto;
+	margin-bottom: 12px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href="/generic/css/header.css" rel="stylesheet"/>
+		<link href="/myProfile/css/myProfile.css" rel="stylesheet"/>
+		<title>Hypertube</title>
+	</head>
+	<body>
+		<header>
+		<!-- header is imported from generic dir -->
+		</header>
+		<div class="container">
+            <form class="form-horizontal" role="form">
+                <h2 id="profile_title" class="trn">My profile</h2>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label trn">First name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="First Name" class="form-control red-tooltip" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label trn">Last name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="lastName" placeholder="Last Name" class="form-control red-tooltip" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label ">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control red-tooltip">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate" class="col-sm-3 control-label trn">Date of Birth</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="birthDate" class="form-control red-tooltip" />
+                    </div>
+                </div>
+                <div id="gender_radio_container" class="form-group">
+                    <label class="control-label col-sm-3 trn">Gender</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" name="gender" value="Female"><span class="trn">Female</span>
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" name="gender" value="Male" ><span class="trn">Male</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bio" class="col-sm-3 control-label trn">About me</label>
+                    <div class="col-sm-9">
+                        <textarea type="text" id="bio" placeholder="Make a short presentation of yourself.." class="form-control red-tooltip" rows="6" autofocus></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label id="test" for="load_pictures" class="col-sm-3 control-label trn">Load profile picture</label>
+                    <div class="col-sm-9">
+                        <label class="btn btn-default btn-file"><span class="trn">Browse</span><input type="file" style="display: none;" id="upload_profile_picture_btn" accept="image/png, image/jpeg, image/jpg"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profile_picture" class="col-sm-3 control-label trn">Profile picture</label>
+                    <div id="profile_picture_container" class="col-sm-9">
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button type="submit" id="profile_update_btn" class="btn btn-primary btn-block trn">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+		<footer style="text-align: right; cursor: default;">
+			<span style="color: #2C3E50; font-weight: bold;">Hypertube team</span><span style="margin-left: 5px;" class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>
+		</footer>
+	</body>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="/lib/utils.js"></script>
+	<script src="/myProfile/js/myProfile.js"></script>
+</html>

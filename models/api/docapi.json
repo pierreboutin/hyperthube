@@ -1,0 +1,142 @@
+[
+    {
+        "method":"GET",
+        "url":"/api/archive.org",
+        "access":"user",
+        "info":"search data on archive.org",
+        "parameter":{
+            "token":"your token",
+            "search":"your research",
+            "page":"which page you need"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull"
+        }
+    },
+    {
+        "method":"GET",
+        "url":"/api/imdb",
+        "access":"user",
+        "info":"search imdb id of a movie",
+        "parameter":{
+            "token":"your token",
+            "title":"movie title"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull",
+            "id":"the imdb id"
+        }
+    },
+    {
+        "method":"GET",
+        "url":"/api/subtitles",
+        "access":"public",
+        "info":"download movie subtitles",
+        "parameter":{
+            "title":"title of the movie"
+        },
+        "return":{
+            "subtitles":"array of object",
+            "subtitles[].lang":"language",
+            "subtitles[].langShort":"short language",
+            "subtitles[].path":"url of subtitles",
+            "subtitles[].fileName":"name of file"
+        }
+    },
+    {
+        "method":"GET",
+        "url":"/api/torrent/download",
+        "access":"user",
+        "info":"download a torrent file for stream",
+        "parameter":{
+            "token":"your admin token",
+            "url":"url of the torrent file"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull",
+            "hash":"hash of torrent"
+        }
+    },
+    {
+        "method":"GET",
+        "url":"/api/torrent/files",
+        "access":"user",
+        "info":"list files can be stream in a torrent file",
+        "parameter":{
+            "token":"your token",
+            "hash":"hash of torrent"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull",
+            "files":"array of object",
+            "files[].name":"name of the file",
+            "files[].percentDl":"percent of downloading",
+            "files[].percentEncod":"percent of encoding"
+        }
+    },
+    {
+        "method":"GET",
+        "url":"/api/doc",
+        "access":"public",
+        "info":"get all api doc in json",
+        "parameter":{},
+        "return":{}
+    },
+    {
+        "method":"POST",
+        "url":"/api/account",
+        "access":"public",
+        "info":"create a dev account for api, you can use form for create your account",
+        "parameter":{
+            "username":"your username",
+            "email":"your email",
+            "password":"your password"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull"
+        }
+    },
+    {
+        "method":"POST",
+        "url":"/api/authenticate",
+        "access":"public",
+        "info":"get your token with your dev account",
+        "parameter":{
+            "username":"your dev username",
+            "password":"your dev password"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull",
+            "token":"your token, he expire in 24 hours"
+        }
+    },
+    {
+        "method":"DELETE",
+        "url":"/api/account",
+        "access":"user",
+        "info":"delete your dev account, send parameters by form",
+        "parameter":{
+            "token":"your token",
+            "username":"your username",
+            "email":"your email",
+            "password":"your password"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull"
+        }
+    },
+    {
+        "method":"DELETE",
+        "url":"/api/account",
+        "access":"admin",
+        "info":"delete any dev account, send parameters by form",
+        "parameter":{
+            "token":"your admin token",
+            "username":"username of dev account",
+            "email":"email of dev account"
+        },
+        "return":{
+            "success":"false if any error, true if request is successfull"
+        }
+    }
+]
